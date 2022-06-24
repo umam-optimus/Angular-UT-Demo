@@ -6,11 +6,13 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
+  [x: string]: any;
   public current = 1;
   public items = [...Array(180).keys()].map((x) => `item ${++x}`);
   public itemsToDisplay: string[] = [];
   public perPage = 10;
   public total = Math.ceil(this.items.length / this.perPage);
+  title ="angular-pagination";
 
   ngOnInit(): void {
     this.itemsToDisplay = this.paginate(this.current, this.perPage);
