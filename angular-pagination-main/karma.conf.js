@@ -27,8 +27,9 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/angular-pagination'),
-      subdir: '.',
+      dir : './coverage/angular-pagination',
+      //dir: require('path').join(__dirname, './coverage/angular-pagination'),
+      // subdir: '.',
       reports: [
         { type: 'html' },
         { type: 'lcovonly' },
@@ -42,7 +43,7 @@ module.exports = function (config) {
       outputFile: 'unit-test-result.xml',
       useBrowserName: false
    },
-    reporters: ['progress', 'kjhtml','junit'],
+    reporters: ['progress', 'coverage','kjhtml','junit'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
@@ -50,5 +51,11 @@ module.exports = function (config) {
     browsers: ['ChromeHeadless'],
     singleRun: false,
     // restartOnFileChange: true
+    preprocessors: {
+      // source files, that you wanna generate coverage for
+      // do not include tests or libraries
+      // (these files will be instrumented by Istanbul)
+      'src/**/*.js': ['coverage']
+    },
   });
 };
