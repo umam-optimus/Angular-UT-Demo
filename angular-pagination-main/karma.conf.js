@@ -27,8 +27,8 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir : './coverage/angular-pagination',
-      //dir: require('path').join(__dirname, './coverage/angular-pagination'),
+      //dir : './coverage/angular-pagination',
+      dir: require('path').join(__dirname, './coverage/angular-pagination'),
       // subdir: '.',
       reports: [
         { type: 'html' },
