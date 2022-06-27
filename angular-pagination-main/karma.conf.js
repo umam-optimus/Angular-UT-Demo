@@ -28,8 +28,8 @@ module.exports = function (config) {
     },
     coverageReporter: {
       dir: require('path').join(__dirname, './coverage/angular-pagination'),
-      // subdir: '.',
-      reporters: [
+      subdir: '.',
+      reports: [
         { type: 'html' },
         { type: 'lcovonly' },
         { type: 'text-summary' },
@@ -49,6 +49,6 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['ChromeHeadless'],
     singleRun: false,
-    restartOnFileChange: true
+    // restartOnFileChange: true
   });
 };
